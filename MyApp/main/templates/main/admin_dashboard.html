@@ -1,0 +1,75 @@
+{% extends 'main/admin_base.html' %}
+{% load static %}
+{% block content %}
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        tr.spaceUnder>td {
+  padding-bottom: 1em;
+  }
+}
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+       <span class="hello-msg" style="color: white;">Hello {{request.user}}</span>
+<!--    <a class="navbar-brand" href="#">AMS</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="position-relative overflow-hidden p-5 p-md-5 text-center">
+    <div class=" p-lg-5 mx-auto my-5">
+     <h2 style="font-weight:bolder; font-family:fantasy;">Attendance Management System</h2>
+       <div   class="position-relative overflow-hidden p-5 p-md-3 text-center">
+
+          <a href="{% url 'admin_attendance_view' %}">
+              <input type="button" style="" class="btn btn-secondary" value="View Attendance" /> </a>  </td>
+          <a href="{% url 'admin_mark_atten' %}">
+             <input type="button" style="" class="btn btn-secondary" value="Mark Attendance" />
+          </a>
+          <a href="{% url 'from_to' %}">
+             <input type="button" style="" class="btn btn-secondary" value="View Report" />
+          </a> 
+          <a href="{% url 'admin_grade' %}">
+             <input type="button" style="" class="btn btn-secondary" value="Grading & Leave Module" />
+          </a>
+
+
+        </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
